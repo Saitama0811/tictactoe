@@ -48,6 +48,10 @@ class Board extends React.Component {
 
     render() {
         const winner = calculateWinner(this.state.squares);
+        var gridFilled = false;
+        if (this.state.squares.findIndex(x => x === null) === -1) {
+            gridFilled = true;
+        }
         let status;
         if (winner) {
             status = 'Winner: ' + winner;
@@ -57,7 +61,8 @@ class Board extends React.Component {
 
         return (
             <div>
-                <div className="status">{status}</div>
+                <div className="status-font center-button">{status}</div>
+                <br />
                 <div className="board-row">
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
@@ -73,8 +78,11 @@ class Board extends React.Component {
                     {this.renderSquare(7)}
                     {this.renderSquare(8)}
                 </div>
-                <div className={winner ? '' : 'hide'}>
-                    <button onClick={() => this.resetGame()}>Refresh</button>
+                <br />
+                <div className="center-button">
+                    <div className={winner || gridFilled ? '' : 'hide'}>
+                        <button className="btn" onClick={() => this.resetGame()}>Refresh</button>
+                    </div>
                 </div>
             </div>
         );
@@ -84,13 +92,18 @@ class Board extends React.Component {
 class Game extends React.Component {
     render() {
         return (
-            <div className="game">
-                <div className="game-board">
-                    <Board />
+            <div>
+                <div className="game">
+                    <div className="center-content">
+                        <Board />
+                    </div>
                 </div>
-                <div className="game-info">
-                    <div>{/* status */}</div>
-                    <ol>{/* TODO */}</ol>
+                <div className="center-button">
+                    <br />
+                    <br />
+                    <br />
+                    <div>This is a very basic demonstration of tic tac toe using <a href="https://reactjs.org/">React.js</a>.</div>
+                    <div>Fork this repository from <a href="https://github.com/Saitama0811/tictactoe">here</a>.</div>
                 </div>
             </div>
         );

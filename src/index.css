@@ -22,15 +22,15 @@ ul {
     background: #fff;
     border: 1px solid #999;
     float: left;
-    font-size: 24px;
+    font-size: 80px;
     font-weight: bold;
     line-height: 34px;
-    height: 34px;
+    height: 90px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 34px;
+    width: 90px;
 }
 
 .square:focus {
@@ -52,4 +52,27 @@ ul {
 
 .hide {
     display: none;
+}
+
+.btn {
+    background-color: transparent;
+    width: 200px;
+    height: 80px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 40px;
+}
+
+.center-content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-button{
+    text-align: center;
+}
+
+.status-font {
+    font-size: 40px;
 }
